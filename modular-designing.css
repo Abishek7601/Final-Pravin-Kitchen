@@ -1,0 +1,3062 @@
+:root {
+
+    --black: #111111;
+    --dark: #171717;
+    --cream: #f5f2eb;
+    --white: #ffffff;
+    --gold: #b8955a;
+    --gold-light: #d1b37b;
+    --gray: #777777;
+    --border: rgba(0,0,0,.1);
+    --container: 1240px;
+    --transition: .4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--black);
+    background: white;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+}
+
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(
+        calc(100% - 80px),
+        var(--container)
+    );
+    margin: auto;
+}
+
+
+.section {
+    padding: 120px 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all .45s ease;
+    background: white;
+}
+
+
+.header.scrolled {
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.10);
+}
+
+
+.header.scrolled .menu-btn {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.header.scrolled .menu-btn span {
+    background: #111;
+}
+
+.navbar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* ================= BRAND ================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    flex-shrink: 0;
+}
+
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    
+}
+
+.brand-logo img {
+    width: 325px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+
+.nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    transition: all .35s ease;
+}
+.nav-link span {
+    font-size: 7px;
+    color: var(--gold-light);
+    opacity: 0;
+    transform:
+        translateY(5px);
+    transition: .35s ease;
+}
+
+
+.nav-link:hover{
+    color:var(--gold);
+}
+
+
+.nav-link:hover span{
+    opacity: 1;
+    transform:
+        translateY(0);
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 1px;
+    background:
+        var(--gold-light);
+    transform:
+        scaleX(0);
+    transform-origin: right;
+    transition:
+        transform .35s ease;
+}
+
+
+.nav-link:hover::after{
+    transform:
+        scaleX(1);
+    transform-origin: left;
+}
+
+.nav-action {
+    margin-left: 10px;
+}
+
+
+.consult-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    color: #111;
+    background: white;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .4s ease;
+}
+
+
+.consult-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        var(--gold);
+    transform:
+        translateY(100%);
+    transition: .4s ease;
+    z-index: 0;
+}
+.consult-btn span,
+.consult-btn i {
+    position: relative;
+    z-index: 1;
+}
+
+
+.consult-btn i {
+    font-style: normal;
+    font-size: 16px;
+    transition: .4s ease;
+}
+
+.consult-btn:hover::before {
+    transform:
+        translateY(0);
+}
+.consult-btn:hover {
+    color: white;
+}
+
+.consult-btn:hover i {
+    transform:
+        translate(4px,-4px);
+}
+
+.menu-btn {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border:
+        1px solid rgba(255,255,255,.3);
+    background:
+        rgba(255,255,255,.06);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 21px;
+    height: 1px;
+    background: white;
+}
+/* 
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: #111;
+    color: white;
+    transform:
+        translateX(100%);
+    transition:
+        transform .6s
+        cubic-bezier(.77,0,.18,1);
+    overflow-y: auto;
+}
+
+
+.mobile-menu.active {
+    transform:
+        translateX(0);
+}
+
+
+.mobile-menu-inner {
+    min-height: 100%;
+    padding:
+        25px 25px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.mobile-menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom:
+        1px solid rgba(255,255,255,.1);
+}
+
+.mobile-menu-top span {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+}
+
+
+.mobile-menu-top button {
+    width: 45px;
+    height: 45px;
+    border:
+        1px solid rgba(255,255,255,.25);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+
+.mobile-links a {
+    display: grid;
+    grid-template-columns:
+        35px 1fr 30px;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom:
+        1px solid rgba(255,255,255,.1);
+    font-family:
+        "Playfair Display",
+        serif;
+    font-size: 25px;
+} */
+
+
+
+.mobile-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    right: -100%;
+
+    width: 320px;
+    max-width: 88vw;
+    height: 100vh;
+
+    background: #ffffff;
+
+    z-index: 2000;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.18);
+
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+    overflow-y: auto;
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+
+/* -----------------------------
+   SIDEBAR HEADER
+----------------------------- */
+
+.sidebar-header {
+
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+.sidebar-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+}
+
+.sidebar-logo img {
+
+    width: auto;
+    height: 48px;
+
+    max-width: 190px;
+
+    object-fit: contain;
+}
+
+
+/* -----------------------------
+   CLOSE BUTTON
+----------------------------- */
+
+.sidebar-close {
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 50%;
+
+    background: #f8f8f8;
+
+    color: #111827;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+.sidebar-close:hover {
+
+    background: #c59a3f;
+
+    border-color: #c59a3f;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* -----------------------------
+   SIDEBAR NAVIGATION
+----------------------------- */
+
+.sidebar-nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 20px 16px;
+
+    gap: 5px;
+}
+
+.sidebar-link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 14px;
+
+    text-decoration: none;
+
+    color: #1f2937;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+
+    overflow: hidden;
+}
+
+.sidebar-link span {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #c59a3f;
+
+    min-width: 25px;
+
+    letter-spacing: 1px;
+}
+
+.sidebar-link::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: #c59a3f;
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition: transform 0.3s ease;
+}
+
+.sidebar-link:hover {
+
+    background: #faf7f0;
+
+    color: #a77b25;
+
+    padding-left: 20px;
+}
+
+.sidebar-link:hover::before {
+
+    transform: scaleY(1);
+}
+
+
+/* -----------------------------
+   ACTIVE SIDEBAR LINK
+----------------------------- */
+
+.sidebar-link.active {
+
+    background: #faf7f0;
+
+    color: #a77b25;
+}
+
+.sidebar-link.active::before {
+
+    transform: scaleY(1);
+}
+
+
+/* -----------------------------
+   SIDEBAR FOOTER
+----------------------------- */
+
+.sidebar-footer {
+
+    margin-top: auto;
+
+    padding: 25px 22px;
+
+    border-top: 1px solid #eeeeee;
+
+    background: #fafafa;
+}
+
+.sidebar-footer p {
+
+    margin: 0 0 7px;
+
+    color: #777777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.sidebar-footer p:first-child {
+
+    color: #222222;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.sidebar-footer a {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #a77b25;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.sidebar-footer a:hover {
+
+    color: #c59a3f;
+}
+
+
+/* -----------------------------
+   OVERLAY
+----------------------------- */
+
+.sidebar-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.48);
+
+    z-index: 1500;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: all 0.35s ease;
+
+    backdrop-filter: blur(3px);
+}
+
+.sidebar-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+ /*  IMAGE SLIDER */
+
+
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden; 
+}
+
+
+.hero-slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    animation: heroAutoSlide 15s infinite ease-in-out;
+}
+
+
+.hero-slides img {
+    width: 20%;
+    height: 100%;
+    flex-shrink: 0;
+    display: block;
+    object-fit: cover;
+    object-position: center ;
+}
+
+  /* DARK OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.70) 0%,
+            rgba(0, 0, 0, 0.45) 40%,
+            rgba(0, 0, 0, 0.15) 75%,
+            rgba(0, 0, 0, 0.20) 100%
+        );
+}
+
+  /* TEXT CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 70px;
+    padding-right: 70px;
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+}
+
+
+.hero-left {
+    width: 100%;
+    max-width: 1100px;
+    color: #ffffff;
+}
+
+  /* EYEBROW */
+
+.eyebrow {
+    margin: 0 0 25px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+  /* HERO HEADING */
+
+.hero-left h1 {
+    margin: 0;
+    max-width: 1100px;
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(65px, 7.5vw, 110px);
+    font-weight: 400;
+    line-height: 0.88;
+    letter-spacing: -4px;
+    color: #ffffff;
+}
+
+
+.hero-left h1 em {
+    display: block;
+    margin-top: 8px;
+    font-family: "Bodoni Moda", serif;
+    font-size: 0.92em;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 0.9;
+    color: var(--accent-light);
+}
+
+ /*  DESCRIPTION */
+
+.hero-description {
+    max-width: 650px;
+    margin: 35px 0 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   INTERIOR DESIGN INTRO
+========================================= */
+
+.section > .container > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+
+/* LEFT CONTENT */
+
+.section .reveal {
+    width: 100%;
+}
+
+.badge-tag {
+    display: inline-block;
+
+    margin-bottom: 1rem;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #b08a45;
+}
+
+
+.section-title {
+    margin: 0 0 1.5rem;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #222;
+}
+
+
+/* PARAGRAPHS */
+
+.section .reveal p {
+    margin: 0 0 1.2rem;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #66717c;
+}
+
+.section .reveal p strong {
+    color: #222;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.section .reveal-delay-2 > div {
+    border-radius: 20px !important;
+
+    overflow: hidden;
+
+    border: 4px solid #fff;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+}
+
+
+.section .reveal-delay-2 img {
+    width: 100% !important;
+    height: 480px !important;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+
+/* IMAGE HOVER */
+
+.section .reveal-delay-2:hover img {
+    transform: scale(1.04);
+}
+
+
+
+
+/* =========================================================
+   INTERIOR SERVICES SECTION
+   ========================================================= */
+
+#interior-services {
+    width: 100%;
+    padding: 70px 0 100px;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+#interior-services .section-header {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Small Badge */
+
+#interior-services .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 25px;
+
+    border: 1px solid #e7c88c;
+    border-radius: 50px;
+
+    background: #faf7f0;
+
+    color: #d9ad64;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+
+/* Main Heading */
+
+#interior-services .section-title {
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    color: #17191d;
+
+    font-size: clamp(40px, 4vw, 62px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+
+/* Subtitle */
+
+#interior-services .section-subtitle {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    color: #61708a;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
+
+#interior-services .services-grid {
+
+    width: min(1250px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 32px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+#interior-services .service-card {
+
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* Card Hover */
+
+#interior-services .service-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #dedede;
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+   ========================================================= */
+
+#interior-services .service-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #f3f3f3;
+}
+
+
+/* Image */
+
+#interior-services .service-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.5s ease;
+}
+
+
+/* Image Hover */
+
+#interior-services .service-card:hover .service-image img {
+
+    transform: scale(1.06);
+
+    filter: brightness(0.96);
+}
+
+
+/* =========================================================
+   SERVICE BADGE
+   ========================================================= */
+
+#interior-services .service-badge {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding: 9px 18px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 50px;
+
+    color: #9a6d32;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+   ========================================================= */
+
+#interior-services .service-content {
+
+    padding: 30px 32px 35px;
+
+    background: #ffffff;
+}
+
+
+/* Card Heading */
+
+#interior-services .service-content h3 {
+
+    margin: 0 0 15px;
+
+    color: #111318;
+
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    font-weight: 150;
+
+    letter-spacing: -0.5px;
+     font-family:
+        "Playfair Display",
+        serif;
+}
+
+
+/* Card Description */
+
+#interior-services .service-content p {
+
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    font-weight: 400;
+    
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+#interior-services .reveal {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+#interior-services .reveal.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* Animation Delays */
+
+#interior-services .reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+#interior-services .reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+#interior-services .reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+
+/* =========================================================
+   PROVEN PROCESS SECTION
+   ========================================================= */
+
+.process-section {
+    width: 100%;
+    padding: 30px 0 90px;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   OUTER CONTAINER
+   ========================================================= */
+
+.process-container {
+    position: relative;
+
+    width: calc(100% - 60px);
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 80px 60px 70px;
+
+    background: #faf9f6;
+
+    border: 1px solid #e8dfd0;
+
+    border-radius: 40px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+   ========================================================= */
+
+.process-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -100px;
+    right: -40px;
+
+    border: 1px solid #eadfce;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.process-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    bottom: -150px;
+    left: -80px;
+
+    border: 1px solid #eadfce;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.process-section .section-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1050px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.process-section .badge-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 27px;
+
+    margin-bottom: 25px;
+
+    background: #f4eee3;
+
+    border: 1px solid #dfbd82;
+
+    border-radius: 50px;
+
+    color: #d4a85f;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.process-section .section-title {
+
+    max-width: 1100px;
+
+    margin: 0 auto 25px;
+
+    color: #17191d;
+
+    font-size: clamp(42px, 4.2vw, 60px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.process-section .section-subtitle {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    color: #62708a;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   PROCESS GRID
+   ========================================================= */
+
+.process-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   PROCESS CARD
+   ========================================================= */
+
+.process-card {
+
+    position: relative;
+
+    min-height: 310px;
+
+    padding: 38px 30px 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5dfd5;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    box-shadow:
+        0 12px 35px rgba(40, 30, 15, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.process-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #d9c19a;
+
+    box-shadow:
+        0 20px 45px rgba(40, 30, 15, 0.12);
+}
+
+
+/* =========================================================
+   NUMBER CIRCLE
+   ========================================================= */
+
+.process-number {
+
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #c39348,
+        #936526
+    );
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 12px 30px rgba(160, 110, 45, 0.22);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Number hover */
+
+.process-card:hover .process-number {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 15px 35px rgba(160, 110, 45, 0.32);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.process-card h4 {
+
+    max-width: 270px;
+
+    margin: 0 0 15px;
+
+    color: #111318;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    font-weight: 750;
+      font-family:
+        "Playfair Display",
+        serif;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.process-card p {
+
+    max-width: 270px;
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.process-section .reveal {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.process-section .reveal.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+
+.footer {
+
+    background: #111;
+
+    color: white;
+
+    padding-top: 80px;
+
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 70px;
+
+    padding-bottom: 70px;
+
+}
+
+
+.footer-brand h3 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 35px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.footer-brand p {
+
+    margin-top: 5px;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color:
+        var(--gold-light);
+
+}
+
+
+.footer-brand span {
+
+    display: block;
+
+    margin-top: 25px;
+
+    max-width: 300px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+.footer-links,
+.footer-contact {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.footer h4 {
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--gold-light);
+
+}
+
+
+.footer-links a {
+
+    color: #aaa;
+
+    font-size: 13px;
+
+}
+
+
+.footer-contact p {
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.footer-contact a {
+
+    color: white;
+
+    font-size: 12px;
+
+}
+
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 25px 0;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    color: #666;
+
+    font-size: 10px;
+
+}
+
+
+
+
+
+
+/* =========================================================
+   MOBILE RESPONSIVE CSS
+   Add this code at the VERY END of your CSS file
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   1024px and below
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -------------------------
+       GLOBAL CONTAINER
+    ------------------------- */
+
+    .container {
+        width: min(calc(100% - 50px), var(--container));
+    }
+
+    .section {
+        padding: 90px 0;
+    }
+
+
+    /* -------------------------
+       HEADER / NAVBAR
+    ------------------------- */
+
+    .navbar {
+        height: 58px;
+    }
+
+    .brand-logo img {
+        width: 250px;
+    }
+
+    .nav {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 10px 9px;
+        font-size: 11px;
+    }
+
+    .nav-action {
+        margin-left: 5px;
+    }
+
+    .consult-btn {
+        padding: 12px 14px;
+        font-size: 9px;
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+        height: 80vh;
+        min-height: 620px;
+    }
+
+    .hero-slider {
+        height: 80vh;
+    }
+
+    .hero-content {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .hero-left {
+        max-width: 850px;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(55px, 8vw, 85px);
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        max-width: 600px;
+        font-size: 15px;
+    }
+
+
+    /* -------------------------
+       INTRO SECTION
+    ------------------------- */
+
+    .section > .container > div {
+        gap: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .section .reveal p {
+        font-size: 14px;
+    }
+
+    .section .reveal-delay-2 img {
+        height: 400px !important;
+    }
+
+
+    /* -------------------------
+       INTERIOR SERVICES
+    ------------------------- */
+
+    #interior-services {
+        padding: 70px 0 80px;
+    }
+
+    #interior-services .section-header {
+        margin-bottom: 50px;
+    }
+
+    #interior-services .section-title {
+        font-size: 48px;
+    }
+
+    #interior-services .section-subtitle {
+        font-size: 16px;
+    }
+
+    #interior-services .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        width: min(900px, calc(100% - 40px));
+    }
+
+    #interior-services .service-image {
+        height: 280px;
+    }
+
+    #interior-services .service-content {
+        padding: 25px;
+    }
+
+
+    /* -------------------------
+       PROCESS SECTION
+    ------------------------- */
+
+    .process-section {
+        padding: 20px 0 70px;
+    }
+
+    .process-container {
+        width: calc(100% - 40px);
+        padding: 65px 35px 55px;
+        border-radius: 32px;
+    }
+
+    .process-section .section-header {
+        margin-bottom: 55px;
+    }
+
+    .process-section .section-title {
+        font-size: 46px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .process-card {
+        min-height: 290px;
+        padding: 32px 25px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    .footer {
+        padding-top: 65px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 35px;
+        padding-bottom: 55px;
+    }
+
+    .footer-brand h3 {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   768px and below
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -------------------------
+       GLOBAL
+    ------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 36px);
+        max-width: none;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header {
+        padding: 12px 0;
+    }
+
+    .header.scrolled {
+        padding: 9px 0;
+    }
+
+    .navbar {
+        height: 52px;
+    }
+
+    /* Logo */
+
+    .brand-logo img {
+        width: 200px;
+        max-width: 70vw;
+    }
+
+    /* Hide desktop navigation */
+
+    .nav,
+    .nav-action {
+        display: none;
+    }
+
+    /* Show hamburger */
+
+    .menu-btn {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    .menu-btn span {
+        width: 20px;
+        height: 1px;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+       ===================================================== */
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu-inner {
+        padding: 22px 22px 30px;
+    }
+
+    .mobile-menu-top {
+        padding-bottom: 20px;
+    }
+
+    .mobile-menu-top span {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+    }
+
+    .mobile-menu-top button {
+        width: 42px;
+        height: 42px;
+    }
+
+    .mobile-links {
+        margin-top: 18px;
+    }
+
+    .mobile-links a {
+        grid-template-columns: 30px 1fr 25px;
+        gap: 8px;
+        padding: 18px 0;
+        font-size: 22px;
+    }
+
+
+    /* =====================================================
+       MOBILE SIDEBAR
+       ===================================================== */
+
+    .mobile-sidebar {
+        width: 310px;
+        max-width: 88vw;
+    }
+
+    .sidebar-header {
+        min-height: 80px;
+        padding: 15px 18px;
+    }
+
+    .sidebar-logo img {
+        height: 42px;
+        max-width: 170px;
+    }
+
+    .sidebar-close {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
+
+    .sidebar-nav {
+        padding: 18px 14px;
+    }
+
+    .sidebar-link {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+
+    .sidebar-link:hover {
+        padding-left: 17px;
+    }
+
+    .sidebar-footer {
+        padding: 22px 18px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        height: 78vh;
+        min-height: 580px;
+    }
+
+    .hero-slider {
+        height: 78vh;
+    }
+
+    .hero-slides img {
+        object-position: center;
+    }
+
+    /* Stronger mobile overlay */
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.72) 0%,
+                rgba(0, 0, 0, 0.52) 55%,
+                rgba(0, 0, 0, 0.28) 100%
+            );
+    }
+
+    .hero-content {
+        padding-left: 28px;
+        padding-right: 28px;
+        align-items: center;
+    }
+
+    .hero-left {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .eyebrow {
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero-left h1 {
+        max-width: 100%;
+        font-size: clamp(48px, 12vw, 72px);
+        line-height: 0.92;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-left h1 em {
+        margin-top: 6px;
+        font-size: 0.92em;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin-top: 25px;
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       GENERAL SECTION HEADER
+       ===================================================== */
+
+    .section-header {
+        max-width: 100%;
+        margin-bottom: 40px;
+        padding: 0 5px;
+    }
+
+    .badge-tag {
+        padding: 7px 13px;
+        margin-bottom: 12px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-title {
+        font-size: clamp(30px, 8vw, 42px);
+        line-height: 1.15;
+        letter-spacing: -0.8px;
+    }
+
+    .section-subtitle {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       INTERIOR INTRO
+       ===================================================== */
+
+    .section > .container > div {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .section .reveal {
+        width: 100%;
+    }
+
+    .section .reveal p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .section .reveal-delay-2 {
+        width: 100%;
+    }
+
+    .section .reveal-delay-2 > div {
+        border-radius: 16px !important;
+        border-width: 3px;
+    }
+
+    .section .reveal-delay-2 img {
+        height: 360px !important;
+    }
+
+
+    /* =====================================================
+       INTERIOR SERVICES
+       ===================================================== */
+
+    #interior-services {
+        padding: 65px 0 75px;
+    }
+
+    #interior-services .section-header {
+        padding: 0 18px;
+        margin-bottom: 40px;
+    }
+
+    #interior-services .badge-tag {
+        padding: 9px 18px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    #interior-services .section-title {
+        font-size: clamp(32px, 8vw, 44px);
+        letter-spacing: -1px;
+    }
+
+    #interior-services .section-subtitle {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    #interior-services .services-grid {
+        width: calc(100% - 36px);
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    #interior-services .service-card {
+        border-radius: 24px;
+    }
+
+    #interior-services .service-image {
+        height: 260px;
+    }
+
+    #interior-services .service-badge {
+        top: 15px;
+        left: 15px;
+        min-height: 34px;
+        padding: 7px 13px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    #interior-services .service-content {
+        padding: 23px 22px 27px;
+    }
+
+    #interior-services .service-content h3 {
+        margin-bottom: 11px;
+        font-size: 21px;
+    }
+
+    #interior-services .service-content p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       NORMAL SERVICES GRID
+       ===================================================== */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        border-radius: 20px;
+    }
+
+    .service-image {
+        height: 240px;
+    }
+
+    .service-content {
+        padding: 22px;
+    }
+
+    .service-content h3 {
+        font-size: 21px;
+    }
+
+    .service-content p {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FEATURES LIST
+       ===================================================== */
+
+    .features-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 1.8rem;
+    }
+
+    .feature-item {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       PROCESS SECTION
+       ===================================================== */
+
+    .process-section {
+        padding: 15px 0 60px;
+    }
+
+    .process-container {
+        width: calc(100% - 24px);
+        padding: 55px 18px 45px;
+        border-radius: 25px;
+    }
+
+    .process-container::before {
+        width: 180px;
+        height: 180px;
+        top: -80px;
+        right: -70px;
+    }
+
+    .process-container::after {
+        width: 160px;
+        height: 160px;
+        bottom: -110px;
+        left: -70px;
+    }
+
+    .process-section .section-header {
+        margin-bottom: 40px;
+        padding: 0 8px;
+    }
+
+    .process-section .badge-tag {
+        padding: 9px 18px;
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .process-section .section-title {
+        font-size: clamp(32px, 8vw, 44px);
+        letter-spacing: -1px;
+    }
+
+    .process-section .section-subtitle {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .process-card {
+        min-height: auto;
+        padding: 30px 22px 32px;
+        border-radius: 24px;
+    }
+
+    .process-number {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+        font-size: 19px;
+    }
+
+    .process-card h4 {
+        max-width: 100%;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .process-card p {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       TRUST BAR
+       ===================================================== */
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-item {
+        padding: 25px 15px;
+        border-right: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        text-align: center;
+    }
+
+    .trust-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .trust-item:nth-child(3),
+    .trust-item:nth-child(4) {
+        border-bottom: 0;
+    }
+
+    .trust-item strong {
+        font-size: 28px;
+    }
+
+    .trust-item span {
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       IMAGE STACK
+       ===================================================== */
+
+    .image-stack {
+        border-radius: 18px;
+    }
+
+    .image-stack img {
+        height: 350px;
+    }
+
+    .image-stack > div {
+        padding: 22px;
+    }
+
+
+    /* =====================================================
+       HOME CTA
+       ===================================================== */
+
+    .home-cta {
+        min-height: 500px;
+        padding: 70px 20px;
+    }
+
+    .home-cta h2 {
+        margin: 15px auto 25px;
+        max-width: 100%;
+        font-size: clamp(40px, 10vw, 62px);
+        line-height: 1;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 25px;
+        padding-bottom: 45px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand h3 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .footer-brand p {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
+
+    .footer-brand span {
+        margin-top: 18px;
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .footer h4 {
+        margin-bottom: 12px;
+        font-size: 8px;
+    }
+
+    .footer-links,
+    .footer-contact {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-contact p {
+        font-size: 12px;
+    }
+
+    .footer-contact a {
+        font-size: 11px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px and below
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* -------------------------
+       GLOBAL
+    ------------------------- */
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+
+    /* -------------------------
+       HEADER
+    ------------------------- */
+
+    .header {
+        padding: 9px 0;
+    }
+
+    .navbar {
+        height: 48px;
+    }
+
+    .brand-logo img {
+        width: 165px;
+        max-width: 68vw;
+    }
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    /* -------------------------
+       MOBILE MENU
+    ------------------------- */
+
+    .mobile-menu-inner {
+        padding: 18px 18px 25px;
+    }
+
+    .mobile-links a {
+        grid-template-columns: 25px 1fr 20px;
+        padding: 17px 0;
+        font-size: 20px;
+    }
+
+
+    /* -------------------------
+       SIDEBAR
+    ------------------------- */
+
+    .mobile-sidebar {
+        width: 290px;
+        max-width: 90vw;
+    }
+
+    .sidebar-header {
+        min-height: 75px;
+        padding: 14px 16px;
+    }
+
+    .sidebar-logo img {
+        height: 38px;
+        max-width: 150px;
+    }
+
+    .sidebar-close {
+        width: 38px;
+        height: 38px;
+        font-size: 23px;
+    }
+
+    .sidebar-nav {
+        padding: 15px 12px;
+    }
+
+    .sidebar-link {
+        padding: 13px 11px;
+        font-size: 13px;
+        gap: 12px;
+    }
+
+    .sidebar-link span {
+        font-size: 10px;
+        min-width: 22px;
+    }
+
+    .sidebar-footer {
+        padding: 20px 16px;
+    }
+
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+        height: 75vh;
+        min-height: 540px;
+    }
+
+    .hero-slider {
+        height: 75vh;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .eyebrow {
+        margin-bottom: 15px;
+        font-size: 8px;
+        letter-spacing: 2.5px;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(42px, 13vw, 60px);
+        line-height: 0.93;
+        letter-spacing: -2px;
+    }
+
+    .hero-left h1 em {
+        margin-top: 5px;
+    }
+
+    .hero-description {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+
+    /* -------------------------
+       SECTION HEADER
+    ------------------------- */
+
+    .section-header {
+        margin-bottom: 32px;
+    }
+
+    .badge-tag {
+        padding: 6px 11px;
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    .section-title {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+        font-size: 12px;
+    }
+
+
+    /* -------------------------
+       INTRO
+    ------------------------- */
+
+    .section > .container > div {
+        gap: 28px;
+    }
+
+    .section .reveal p {
+        font-size: 12.5px;
+        line-height: 1.75;
+    }
+
+    .section .reveal-delay-2 img {
+        height: 300px !important;
+    }
+
+
+    /* -------------------------
+       INTERIOR SERVICES
+    ------------------------- */
+
+    #interior-services {
+        padding: 55px 0 65px;
+    }
+
+    #interior-services .section-header {
+        padding: 0 14px;
+        margin-bottom: 32px;
+    }
+
+    #interior-services .section-title {
+        font-size: 31px;
+        line-height: 1.12;
+    }
+
+    #interior-services .section-subtitle {
+        font-size: 12.5px;
+    }
+
+    #interior-services .services-grid {
+        width: calc(100% - 28px);
+        gap: 18px;
+    }
+
+    #interior-services .service-card {
+        border-radius: 20px;
+    }
+
+    #interior-services .service-image {
+        height: 230px;
+    }
+
+    #interior-services .service-badge {
+        top: 12px;
+        left: 12px;
+        padding: 6px 11px;
+        font-size: 9px;
+    }
+
+    #interior-services .service-content {
+        padding: 20px 18px 23px;
+    }
+
+    #interior-services .service-content h3 {
+        font-size: 19px;
+    }
+
+    #interior-services .service-content p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+
+    /* -------------------------
+       SERVICE CARDS
+    ------------------------- */
+
+    .service-image {
+        height: 220px;
+    }
+
+    .service-content {
+        padding: 20px 18px;
+    }
+
+    .service-content h3 {
+        font-size: 19px;
+    }
+
+    .service-content p {
+        font-size: 12px;
+    }
+
+    .service-features {
+        gap: 10px;
+    }
+
+    .service-features li {
+        font-size: 11.5px;
+    }
+
+    .service-features li svg {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+    }
+
+
+    /* -------------------------
+       PROCESS
+    ------------------------- */
+
+    .process-section {
+        padding: 10px 0 50px;
+    }
+
+    .process-container {
+        width: calc(100% - 16px);
+        padding: 45px 14px 35px;
+        border-radius: 20px;
+    }
+
+    .process-section .section-header {
+        margin-bottom: 32px;
+        padding: 0 5px;
+    }
+
+    .process-section .section-title {
+        font-size: 31px;
+    }
+
+    .process-section .section-subtitle {
+        font-size: 12px;
+    }
+
+    .process-grid {
+        gap: 15px;
+    }
+
+    .process-card {
+        padding: 26px 18px 28px;
+        border-radius: 20px;
+    }
+
+    .process-number {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 17px;
+        font-size: 17px;
+    }
+
+    .process-card h4 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .process-card p {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+
+    /* -------------------------
+       TRUST BAR
+    ------------------------- */
+
+    .trust-item {
+        padding: 22px 10px;
+    }
+
+    .trust-item strong {
+        font-size: 24px;
+    }
+
+    .trust-item span {
+        font-size: 7px;
+        letter-spacing: .8px;
+    }
+
+
+    /* -------------------------
+       IMAGE STACK
+    ------------------------- */
+
+    .image-stack img {
+        height: 280px;
+    }
+
+    .image-stack > div {
+        padding: 18px;
+    }
+
+
+    /* -------------------------
+       CTA
+    ------------------------- */
+
+    .home-cta {
+        min-height: 450px;
+        padding: 60px 18px;
+    }
+
+    .home-cta h2 {
+        font-size: 38px;
+        line-height: 1;
+        margin: 12px auto 22px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    .footer {
+        padding-top: 45px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-bottom: 35px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-brand h3 {
+        font-size: 25px;
+        letter-spacing: 2.5px;
+    }
+
+    .footer-brand p {
+        font-size: 6px;
+        letter-spacing: 2px;
+    }
+
+    .footer-brand span {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .footer-links a,
+    .footer-contact p {
+        font-size: 11px;
+    }
+
+    .footer-contact a {
+        font-size: 11px;
+    }
+
+    .footer-bottom {
+        font-size: 8px;
+        padding: 17px 0;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px and below
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .brand-logo img {
+        width: 145px;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    #interior-services .section-title {
+        font-size: 28px;
+    }
+
+    #interior-services .service-image {
+        height: 210px;
+    }
+
+    .process-container {
+        width: calc(100% - 12px);
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .process-card {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .home-cta h2 {
+        font-size: 34px;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Remove hover movement on mobile
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .service-card:hover,
+    .process-card:hover {
+        transform: none;
+    }
+
+    .service-card:hover .service-image img,
+    #interior-services .service-card:hover .service-image img {
+        transform: none;
+        filter: none;
+    }
+
+    .image-stack:hover img {
+        transform: none;
+    }
+
+    .process-card:hover .process-number {
+        transform: none;
+    }
+
+}
+
