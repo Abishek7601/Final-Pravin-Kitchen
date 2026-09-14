@@ -104,7 +104,7 @@ button {
 }
 
 
-/* ================= BRAND ================= */
+/*  BRAND  */
 
 .brand {
     display: flex;
@@ -272,33 +272,19 @@ button {
     background: white;
 }
 
-
-
-
-
-
 .mobile-sidebar {
-
     position: fixed;
-
     top: 0;
     right: -100%;
-
     width: 320px;
     max-width: 88vw;
     height: 100vh;
-
     background: #ffffff;
-
     z-index: 2000;
-
     display: flex;
     flex-direction: column;
-
     box-shadow: -15px 0 50px rgba(0, 0, 0, 0.18);
-
     transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-
     overflow-y: auto;
 }
 
@@ -307,172 +293,109 @@ button {
 }
 
 
-/* -----------------------------
-   SIDEBAR HEADER
------------------------------ */
+  /* SIDEBAR HEADER */
+
 
 .sidebar-header {
-
     min-height: 90px;
-
     padding: 18px 20px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     border-bottom: 1px solid #eeeeee;
-
     background: #ffffff;
 }
 
 .sidebar-logo {
-
     display: inline-flex;
-
     align-items: center;
 }
 
 .sidebar-logo img {
-
     width: auto;
     height: 48px;
-
     max-width: 190px;
-
     object-fit: contain;
 }
 
 
-/* -----------------------------
-   CLOSE BUTTON
------------------------------ */
+  /* CLOSE BUTTON */
+
 
 .sidebar-close {
-
     width: 42px;
     height: 42px;
-
     border: 1px solid #e5e5e5;
-
     border-radius: 50%;
-
     background: #f8f8f8;
-
     color: #111827;
-
     font-size: 28px;
-
     line-height: 1;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     transition: all 0.3s ease;
 }
 
 .sidebar-close:hover {
-
     background: #c59a3f;
-
     border-color: #c59a3f;
-
     color: #ffffff;
-
     transform: rotate(90deg);
 }
 
 
-/* -----------------------------
-   SIDEBAR NAVIGATION
------------------------------ */
+  /* SIDEBAR NAVIGATION */
+
 
 .sidebar-nav {
-
     display: flex;
-
     flex-direction: column;
-
     padding: 20px 16px;
-
     gap: 5px;
 }
 
 .sidebar-link {
-
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
     padding: 15px 14px;
-
     text-decoration: none;
-
     color: #1f2937;
-
     font-family: "Poppins", sans-serif;
-
     font-size: 15px;
-
     font-weight: 600;
-
     border-radius: 10px;
-
     transition: all 0.3s ease;
-
     overflow: hidden;
 }
 
 .sidebar-link span {
-
     font-size: 11px;
-
     font-weight: 700;
-
     color: #c59a3f;
-
     min-width: 25px;
-
     letter-spacing: 1px;
 }
 
 .sidebar-link::before {
-
     content: "";
-
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 3px;
     height: 100%;
-
     background: #c59a3f;
-
     transform: scaleY(0);
-
     transform-origin: bottom;
-
     transition: transform 0.3s ease;
 }
 
 .sidebar-link:hover {
-
     background: #faf7f0;
-
     color: #a77b25;
-
     padding-left: 20px;
 }
 
@@ -482,14 +405,10 @@ button {
 }
 
 
-/* -----------------------------
-   ACTIVE SIDEBAR LINK
------------------------------ */
+ /*  ACTIVE SIDEBAR LINK  */
 
 .sidebar-link.active {
-
     background: #faf7f0;
-
     color: #a77b25;
 }
 
@@ -499,97 +418,61 @@ button {
 }
 
 
-/* -----------------------------
-   SIDEBAR FOOTER
------------------------------ */
+ /*  SIDEBAR FOOTER */
 
 .sidebar-footer {
-
     margin-top: auto;
-
     padding: 25px 22px;
-
     border-top: 1px solid #eeeeee;
-
     background: #fafafa;
 }
 
 .sidebar-footer p {
-
     margin: 0 0 7px;
-
     color: #777777;
-
     font-family: "Poppins", sans-serif;
-
     font-size: 12px;
-
     line-height: 1.6;
 }
 
 .sidebar-footer p:first-child {
-
     color: #222222;
-
     font-size: 13px;
-
     font-weight: 700;
-
     margin-bottom: 8px;
 }
 
 .sidebar-footer a {
-
     display: inline-block;
-
     margin-top: 8px;
-
     color: #a77b25;
-
     font-size: 13px;
-
     font-weight: 700;
-
     text-decoration: none;
 }
 
 .sidebar-footer a:hover {
-
     color: #c59a3f;
 }
 
 
-/* -----------------------------
-   OVERLAY
------------------------------ */
+  /* OVERLAY */
 
 .sidebar-overlay {
-
     position: fixed;
-
     inset: 0;
-
     background: rgba(0, 0, 0, 0.48);
-
     z-index: 1500;
-
     opacity: 0;
-
     visibility: hidden;
-
     transition: all 0.35s ease;
-
     backdrop-filter: blur(3px);
 }
 
 .sidebar-overlay.active {
-
     opacity: 1;
-
     visibility: visible;
 }
-
-
 
 .hero {
     position: relative;
@@ -603,7 +486,6 @@ button {
 
  /*  IMAGE SLIDER */
 
-
 .hero-slider {
     position: absolute;
     inset: 0;
@@ -612,14 +494,12 @@ button {
     overflow: hidden; 
 }
 
-
 .hero-slides {
     display: flex;
     width: 500%;
     height: 100%;
     animation: heroAutoSlide 15s infinite ease-in-out;
 }
-
 
 .hero-slides img {
     width: 20%;
@@ -719,86 +599,60 @@ button {
 
 .contact-section {
     padding: 120px 0;
-
     background: var(--cream);
 }
 
 .contact-grid {
     display: grid;
-
     grid-template-columns: .9fr 1.1fr;
-
     gap: 100px;
-
     align-items: start;
 }
 
 
-/* =====================================================
-   CONTACT INFO
-===================================================== */
+ /*  CONTACT INFO */
 
 .contact-info h2 {
     margin-top: 22px;
-
     max-width: 500px;
-
     font-family: "Playfair Display", serif;
-
     font-size: clamp(45px, 5vw, 70px);
-
     line-height: 1;
-
     font-weight: 400;
-
     letter-spacing: -2px;
 }
 
 .contact-description {
     max-width: 500px;
-
     margin-top: 30px;
-
     color: #777;
-
     font-size: 14px;
-
     line-height: 1.9;
 }
 
 .contact-details {
     margin-top: 50px;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 30px;
 }
 
 .contact-detail {
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
 }
 
 .contact-detail span {
     color: var(--gold);
-
     font-size: 8px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .contact-detail a {
     font-family: "Playfair Display", serif;
-
     font-size: 20px;
-
     transition: .3s ease;
 }
 
@@ -808,37 +662,23 @@ button {
 
 .contact-detail p {
     color: #555;
-
     font-size: 14px;
-    
     font-family: "Playfair Display", serif;
 }
 
 .contact-whatsapp {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 35px;
-
     margin-top: 55px;
-
     padding: 17px 22px;
-
     background: #111;
-
     color: white;
-
     font-size: 10px;
-
     font-weight: 700;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
     transition: .4s ease;
 }
 
@@ -848,47 +688,35 @@ button {
 
 .contact-whatsapp:hover {
     background: var(--gold);
-
     transform: translateY(-3px);
 }
 
 
-/* =====================================================
-   FORM
-===================================================== */
+ /*  FORM */
 
 .contact-form-wrapper {
     padding: 55px;
-
     background: white;
-
     box-shadow:
         0 30px 80px rgba(0,0,0,.08);
 }
 
 .form-heading {
     padding-bottom: 30px;
-
     margin-bottom: 35px;
-
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .form-heading span {
     color: var(--gold);
-
     font-size:  15px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .form-heading p {
     margin-top: 12px;
-
     color: #888;
-
     font-size: 17px;
 }
 
@@ -901,17 +729,11 @@ button {
 
 .form-group label {
     display: block;
-
     margin-bottom: 10px;
-
     color: #333;
-
     font-size: 13px;
-
     font-weight: 600;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
 }
 
@@ -919,29 +741,19 @@ button {
 .form-group select,
 .form-group textarea {
     width: 100%;
-
     padding: 15px 0;
-
     border: none;
-
     border-bottom: 1px solid #d8d8d8;
-
     outline: none;
-
     background: transparent;
-
     color: #222;
-
     font-family: "DM Sans", sans-serif;
-
     font-size: 13px;
-
     transition: .3s ease;
 }
 
 .form-group textarea {
     resize: vertical;
-
     min-height: 110px;
 }
 
@@ -979,45 +791,28 @@ button {
 
 .form-submit {
     width: 100%;
-
     margin-top: 10px;
-
     padding: 20px 25px;
-
     display: flex;
     text-align: center;
-
     align-items: center;
-
     justify-content: space-between;
-
     border: none;
-
     background: var(--black);
-
     color: white;
-
     cursor: pointer;
-
     font-family: "DM Sans", sans-serif;
-
     font-size: 10px;
-
     font-weight: 700;
-
     text-transform: uppercase;
-
     letter-spacing: 1.5px;
-
     transition: .4s ease;
 }
 
 
 .form-submit b {
     font-size: 18px;
-
     font-weight: 400;
-
     transition: .3s ease;
 }
 
@@ -1031,20 +826,15 @@ button {
 
 .form-note {
     margin-top: 18px;
-
     color: #aaa;
-
     font-size: 15px;
-
     line-height: 1.6;
 }
 
 
 .section-header {
     text-align: center;
-
     max-width: 800px;
-
     margin: 0 auto 45px;
 }
 
@@ -1054,25 +844,17 @@ button {
 
 .section-subtitle {
     color: var(--text-light);
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
 .map-section-wrapper {
     width: min(1180px, 92%);
-
     height: 450px;
-
     margin: 0 auto;
-
     border-radius: 24px;
-
     overflow: hidden;
-
     box-shadow: var(--shadow-lg);
-
     border: 5px solid #ffffff;
 }
 
@@ -1083,15 +865,11 @@ button {
 }
 
 
-/* =========================================================
-   REVEAL ANIMATION
-   ========================================================= */
+ /*  REVEAL ANIMATION */
 
 .reveal {
     opacity: 0;
-
     transform: translateY(30px);
-
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
@@ -1099,7 +877,6 @@ button {
 
 .reveal.show {
     opacity: 1;
-
     transform: translateY(0);
 }
 
@@ -1107,128 +884,81 @@ button {
     transition-delay: 0.15s;
 }
 
-
-
-
 .footer {
 
     background: #111;
-
     color: white;
-
     padding-top: 80px;
 
 }
 
 
 .footer-grid {
-
     display: grid;
-
     grid-template-columns:
         2fr 1fr 1fr;
-
     gap: 70px;
-
     padding-bottom: 70px;
 
 }
 
 
 .footer-brand h3 {
-
     font-family:
         "Playfair Display",
         serif;
-
     font-size: 35px;
-
     letter-spacing: 4px;
-
 }
 
 
 .footer-brand p {
-
     margin-top: 5px;
-
     font-size: 8px;
-
     letter-spacing: 3px;
-
     color:
         var(--gold-light);
-
 }
 
 
 .footer-brand span {
-
     display: block;
-
     margin-top: 25px;
-
     max-width: 300px;
-
     color: #777;
-
     font-size: 13px;
-
     line-height: 1.8;
-
 }
 
 
 .footer-links,
 .footer-contact {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
 }
-
 
 .footer h4 {
-
     margin-bottom: 15px;
-
     font-size: 9px;
-
     letter-spacing: 2px;
-
     color:
         var(--gold-light);
-
 }
-
 
 .footer-links a {
-
     color: #aaa;
-
     font-size: 13px;
-
 }
-
 
 .footer-contact p {
-
     color: #777;
-
     font-size: 13px;
-
 }
 
-
 .footer-contact a {
-
     color: white;
-
     font-size: 12px;
-
 }
 
 
@@ -1249,21 +979,330 @@ button {
 
 }
 
+/* =========================================
+   FLOATING CONTACT
+========================================= */
+
+.floating-contact {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
 
 
 
+/* WhatsApp + Call common style */
+
+.floating-btn {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    text-decoration: none;
+
+    border-radius: 12px 0 0 12px;
+
+    font-size: 23px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+/* WhatsApp */
+
+.whatsapp-btn {
+    background: #25D366;
+}
+
+.whatsapp-btn:hover {
+    width: 62px;
+    color: #fff;
+    background: #20bd5a;
+}
+
+/* Call */
+
+.call-btn {
+    background: #1d73e8;
+}
+
+.call-btn:hover {
+    width: 62px;
+    color: #fff;
+    background: #155fc0;
+}
+
+/* Free Estimate */
+
+.estimate-btn {
+    min-width: 150px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #111;
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 12px 0 0 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.estimate-btn i {
+    font-size: 17px;
+}
+
+.estimate-btn:hover {
+    min-width: 165px;
+    color: #fff;
+    background: #222;
+}
 
 
-/* =========================================================
-   COMPLETE RESPONSIVE DESIGN
-   PRAVIN MODULAR KITCHENS
-   ========================================================= */
+
+/* =========================================
+   ESTIMATE POPUP OVERLAY
+========================================= */
+
+.estimate-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    /* Background blur */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
 
 
-/* =========================================================
-   LARGE TABLET / SMALL LAPTOP
-   MAX-WIDTH: 1200px
-   ========================================================= */
+/* OPEN */
+
+.estimate-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.estimate-popup {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 90vh;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(40px) scale(0.94);
+
+    opacity: 0;
+
+    transition:
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.35s ease;
+}
+
+
+/* POPUP ANIMATION */
+
+.estimate-overlay.active .estimate-popup {
+    transform: translateY(0) scale(1);
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   IFRAME
+========================================= */
+
+.estimate-iframe {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.estimate-close {
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #222;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+
+.estimate-close:hover {
+    background: #222;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+.estimate-open-btn{
+   background: #6027b5;
+   color: white;
+   text-decoration: none;
+   padding: 10px 15px;
+   border-radius: 15px 0 0 15px;
+   font-size: 20px;
+   font-weight: 600;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   transition: 0.3s;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .estimate-overlay {
+        padding: 12px;
+    }
+
+    .estimate-popup {
+        height: 92vh;
+
+        border-radius: 17px;
+    }
+
+    .estimate-close {
+        width: 38px;
+
+        height: 38px;
+
+        top: 10px;
+
+        right: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .estimate-overlay {
+        padding: 7px;
+    }
+
+    .estimate-popup {
+        height: 94vh;
+
+        border-radius: 14px;
+    }
+
+    .estimate-close {
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 14px;
+    }
+}
+
+
+
 
 @media (max-width: 1200px) {
 
@@ -1272,7 +1311,7 @@ button {
     }
 
 
-    /* ================= HEADER ================= */
+    /* HEADER  */
 
     .brand-logo img {
         width: 260px;
@@ -1296,7 +1335,7 @@ button {
     }
 
 
-    /* ================= HERO ================= */
+    /*  HERO */
 
     .hero-content {
         padding-left: 50px;
@@ -1308,7 +1347,7 @@ button {
     }
 
 
-    /* ================= CONTACT ================= */
+    /*  CONTACT  */
 
     .contact-grid {
         gap: 60px;
@@ -1318,8 +1357,7 @@ button {
         padding: 45px;
     }
 
-
-    /* ================= FOOTER ================= */
+    /*  FOOTER  */
 
     .footer-grid {
         gap: 45px;
@@ -1328,14 +1366,10 @@ button {
 }
 
 
-/* =========================================================
-   TABLET
-   MAX-WIDTH: 991px
-   ========================================================= */
 
 @media (max-width: 991px) {
 
-    /* ================= GLOBAL ================= */
+    /* GLOBAL */
 
     html,
     body {
@@ -1348,9 +1382,8 @@ button {
     }
 
 
-    /* =====================================================
-       HEADER
-       ===================================================== */
+    
+     /*  HEADER */  
 
     .header {
         padding: 14px 0;
@@ -1408,9 +1441,7 @@ button {
     }
 
 
-    /* =====================================================
-       MOBILE SIDEBAR
-       ===================================================== */
+     /*  MOBILE SIDEBAR */
 
     .mobile-sidebar {
         width: 320px;
@@ -1447,9 +1478,7 @@ button {
     }
 
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+      /* HERO */
 
     .hero {
         height: 78vh;
@@ -1487,9 +1516,8 @@ button {
     }
 
 
-    /* =====================================================
-       CONTACT SECTION
-       ===================================================== */
+
+     /*  CONTACT SECTION */
 
     .contact-section {
         padding: 90px 0;
@@ -1521,9 +1549,7 @@ button {
     }
 
 
-    /* =====================================================
-       CONTACT FORM
-       ===================================================== */
+      /* CONTACT FORM */
 
     .contact-form-wrapper {
         padding: 45px;
@@ -1535,9 +1561,7 @@ button {
     }
 
 
-    /* =====================================================
-       MAP
-       ===================================================== */
+     /*  MAP */  
 
     .map-section-wrapper {
         width: calc(100% - 40px);
@@ -1546,10 +1570,8 @@ button {
     }
 
 
-    /* =====================================================
-       SECTION HEADER
-       ===================================================== */
-
+      /* SECTION HEADER */
+  
     .section-header {
         max-width: 700px;
         margin-bottom: 40px;
@@ -1560,9 +1582,7 @@ button {
     }
 
 
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+     /*  FOOTER */
 
     .footer {
         padding-top: 65px;
@@ -1581,17 +1601,12 @@ button {
 }
 
 
-/* =========================================================
-   MOBILE
-   MAX-WIDTH: 767px
-   ========================================================= */
 
 @media (max-width: 767px) {
 
-    /* =====================================================
-       GLOBAL
-       ===================================================== */
-
+  
+      /* GLOBAL */
+      
     html {
         width: 100%;
         overflow-x: hidden;
@@ -1607,9 +1622,7 @@ button {
     }
 
 
-    /* =====================================================
-       HEADER
-       ===================================================== */
+     /*  HEADER */
 
     .header {
         padding: 10px 0;
@@ -1629,19 +1642,20 @@ button {
     }
 
     .menu-btn {
-        width: 43px;
-        height: 43px;
+        display: flex;
+        width: 44px;
+        height: 44px;
         flex-shrink: 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.03);
     }
 
     .menu-btn span {
-        width: 20px;
+        background: #0b0b0b;
     }
 
 
-    /* =====================================================
-       SIDEBAR
-       ===================================================== */
+     /*  SIDEBAR */
 
     .mobile-sidebar {
         width: 300px;
@@ -1698,9 +1712,7 @@ button {
     }
 
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+      /* HERO */
 
     .hero {
         height: 80vh;
@@ -1760,9 +1772,7 @@ button {
     }
 
 
-    /* =====================================================
-       CONTACT
-       ===================================================== */
+      /* CONTACT */
 
     .contact-section {
         padding: 65px 0;
@@ -1827,9 +1837,7 @@ button {
     }
 
 
-    /* =====================================================
-       FORM
-       ===================================================== */
+      /* FORM  */
 
     .contact-form-wrapper {
         padding: 28px 20px;
@@ -1896,9 +1904,7 @@ button {
     }
 
 
-    /* =====================================================
-       SECTION HEADER
-       ===================================================== */
+      /* SECTION HEADER */
 
     .section-header {
         width: 100%;
@@ -1916,9 +1922,7 @@ button {
     }
 
 
-    /* =====================================================
-       MAP
-       ===================================================== */
+     /*  MAP */  
 
     .map-section-wrapper {
         width: calc(100% - 30px);
@@ -1929,9 +1933,7 @@ button {
     }
 
 
-    /* =====================================================
-       REVEAL
-       ===================================================== */
+      /* REVEAL */
 
     .reveal {
         transform: translateY(25px);
@@ -1941,9 +1943,7 @@ button {
     }
 
 
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+     /*  FOOTER */  
 
     .footer {
         padding-top: 55px;
@@ -2002,21 +2002,18 @@ button {
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-   MAX-WIDTH: 480px
-   ========================================================= */
+
 
 @media (max-width: 480px) {
 
-    /* ================= GLOBAL ================= */
+    /* GLOBAL  */
 
     .container {
         width: calc(100% - 28px);
     }
 
 
-    /* ================= HEADER ================= */
+    /* HEADER */
 
     .navbar {
         height: 50px;
@@ -2036,7 +2033,7 @@ button {
     }
 
 
-    /* ================= SIDEBAR ================= */
+    /*  SIDEBAR  */
 
     .mobile-sidebar {
         width: 285px;
@@ -2069,7 +2066,7 @@ button {
     }
 
 
-    /* ================= HERO ================= */
+    /*  HERO  */
 
     .hero {
         height: 76vh;
@@ -2104,7 +2101,7 @@ button {
     }
 
 
-    /* ================= CONTACT ================= */
+    /*  CONTACT  */
 
     .contact-section {
         padding: 55px 0;
@@ -2144,7 +2141,7 @@ button {
     }
 
 
-    /* ================= FORM ================= */
+    /*  FORM  */
 
     .contact-form-wrapper {
         padding: 24px 16px;
@@ -2192,7 +2189,7 @@ button {
     }
 
 
-    /* ================= MAP ================= */
+    /*  MAP  */
 
     .map-section-wrapper {
         width: calc(100% - 20px);
@@ -2201,7 +2198,7 @@ button {
     }
 
 
-    /* ================= FOOTER ================= */
+    /*  FOOTER */
 
     .footer {
         padding-top: 45px;
@@ -2236,14 +2233,11 @@ button {
 }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-   MAX-WIDTH: 360px
-   ========================================================= */
+
 
 @media (max-width: 360px) {
 
-    /* ================= HEADER ================= */
+    /*  HEADER  */
 
     .brand-logo img {
         width: 140px;
@@ -2259,7 +2253,7 @@ button {
     }
 
 
-    /* ================= HERO ================= */
+    /*  HERO  */
 
     .hero {
         min-height: 500px;
@@ -2279,7 +2273,7 @@ button {
     }
 
 
-    /* ================= CONTACT ================= */
+    /*  CONTACT  */
 
     .contact-info h2 {
         font-size: 35px;
@@ -2294,7 +2288,7 @@ button {
     }
 
 
-    /* ================= FORM ================= */
+    /* FORM */
 
     .contact-form-wrapper {
         padding: 20px 14px;
@@ -2319,14 +2313,14 @@ button {
     }
 
 
-    /* ================= MAP ================= */
+    /*  MAP  */
 
     .map-section-wrapper {
         height: 240px;
     }
 
 
-    /* ================= FOOTER ================= */
+    /*  FOOTER  */
 
     .footer-brand h3 {
         font-size: 24px;
@@ -2341,10 +2335,8 @@ button {
 }
 
 
+  /* FIND OUR SHOWROOM */
 
-/* =========================================================
-   FIND OUR SHOWROOM
-   ========================================================= */
 
 .section-header {
     max-width: 900px;
@@ -2353,30 +2345,22 @@ button {
 }
 
 
-/* ---------- BADGE ---------- */
+/*  BADGE  */
 
 .badge-tag {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     margin-bottom: 22px;
-
     padding: 9px 18px;
-
     border: 1px solid rgba(184, 149, 90, 0.35);
-
     color: var(--gold);
-
     font-family: "DM Sans", sans-serif;
     font-size: 10px;
     font-weight: 700;
-
     letter-spacing: 2px;
     text-transform: uppercase;
-
     background: rgba(184, 149, 90, 0.06);
-
     position: relative;
 }
 
@@ -2385,61 +2369,44 @@ button {
 
 .badge-tag::before {
     content: "";
-
     width: 22px;
     height: 1px;
-
     margin-right: 10px;
-
     background: var(--gold);
 }
 
 
-/* ---------- SECTION TITLE ---------- */
+/*  SECTION TITLE  */
 
 .section-title {
     margin: 0;
-
     font-family: "Playfair Display", serif;
-
     font-size: clamp(
         42px,
         5vw,
         68px
     );
-
     font-weight: 400;
-
     line-height: 1.05;
-
     letter-spacing: -1.5px;
-
     color: var(--black);
 }
 
 
-/* ---------- SUBTITLE ---------- */
+/*  SUBTITLE  */
 
 .section-subtitle {
     max-width: 680px;
-
     margin: 25px auto 0;
-
     color: var(--gray);
-
     font-family: "DM Sans", sans-serif;
-
     font-size: 15px;
-
     line-height: 1.8;
-
     font-weight: 400;
 }
 
 
-/* =========================================================
-   REVEAL ANIMATION
-   ========================================================= */
+ /*  REVEAL ANIMATION */
 
 .reveal {
     opacity: 0;
@@ -2458,9 +2425,9 @@ button {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+
+  /* TABLET */
+   
 
 @media (max-width: 992px) {
 
@@ -2484,20 +2451,14 @@ button {
 
     .section-subtitle {
         max-width: 620px;
-
         margin-top: 22px;
-
         font-size: 14px;
-
         line-height: 1.75;
     }
 
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
+ /*  MOBILE */  
 
 @media (max-width: 768px) {
 
@@ -2508,11 +2469,8 @@ button {
 
     .badge-tag {
         margin-bottom: 17px;
-
         padding: 8px 14px;
-
         font-size: 8px;
-
         letter-spacing: 1.5px;
     }
 
@@ -2527,36 +2485,27 @@ button {
             10vw,
             52px
         );
-
         line-height: 1.02;
-
         letter-spacing: -1px;
     }
 
     .section-subtitle {
         max-width: 100%;
-
         margin-top: 18px;
-
         font-size: 13px;
-
         line-height: 1.75;
     }
 
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+  /* SMALL MOBILE */  
 
 @media (max-width: 480px) {
 
     .badge-tag {
         padding: 7px 12px;
-
         font-size: 7px;
-
         letter-spacing: 1.3px;
     }
 
@@ -2571,15 +2520,12 @@ button {
             11vw,
             46px
         );
-
         line-height: 1.04;
     }
 
     .section-subtitle {
         margin-top: 16px;
-
         font-size: 12px;
-
         line-height: 1.7;
     }
 

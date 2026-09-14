@@ -77,21 +77,25 @@ button {
 }
 
 
-/* .header.scrolled {
+.header.scrolled {
     padding: 12px 0;
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-} */
-
-.header.scrolled .nav-link {
-    color: #111;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.10);
 }
 
-.header.scrolled .nav-link:hover {
-    color: var(--gold);
+
+.header.scrolled .menu-btn {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.04);
 }
+
+.header.scrolled .menu-btn span {
+    background: #111;
+}
+
+
 
 .navbar {
     height: 64px;
@@ -1007,56 +1011,45 @@ button {
 
 .process-header h2 em {
     font-style: italic;
-
     color: #111;
 }
 
 
-/* =========================================================
-   PROCESS GRID
-========================================================= */
+
+  /* PROCESS GRID */
+
 
 .process-grid {
     display: grid;
-
     grid-template-columns: repeat(5, 1fr);
-
     gap: 0;
-
     position: relative;
 }
 
 
-/* =========================================================
-   HORIZONTAL LINE
-========================================================= */
+
+  /* HORIZONTAL LINE */
+
 
 .process-grid::before {
     content: "";
-
     position: absolute;
-
     top: 7px;
     left: 0;
     right: 0;
-
     height: 1px;
-
     background: rgba(17, 17, 17, .15);
 }
 
 
-/* =========================================================
-   PROCESS ITEM
-========================================================= */
+
+  /* PROCESS ITEM */
+
 
 .process-item {
     position: relative;
-
     padding: 45px 30px 0 0;
-
     border-right: 1px solid rgba(17, 17, 17, .12);
-
     transition: transform .4s ease;
 }
 
@@ -1068,61 +1061,44 @@ button {
 }
 
 
-/* =========================================================
-   NUMBER
-========================================================= */
+  /* NUMBER */
+
 
 .process-item > span {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 15px;
     height: 15px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     font-family: "Montserrat", sans-serif;
-
     font-size: 8px;
     font-weight: 700;
-
     color: white;
-
     background: var(--gold);
-
     border-radius: 50%;
-
     z-index: 2;
 }
 
 
-/* =========================================================
-   PROCESS HEADING
-========================================================= */
+  /* PROCESS HEADING */
+
 
 .process-item h3 {
     margin: 10px;
-
     font-family: "Playfair Display", serif;
-
     font-size: 25px;
-
     font-weight: 500;
-
     line-height: 1.2;
-
     color: #111;
 }
 
 
-/* =========================================================
-   PROCESS DESCRIPTION
-========================================================= */
+
+ /*  PROCESS DESCRIPTION */
+
 
 .process-item p {
     max-width: 190px;
@@ -1139,9 +1115,9 @@ button {
 }
 
 
-/* =========================================================
-   HOVER
-========================================================= */
+
+  /* HOVER */
+
 
 .process-item:hover {
     transform: translateY(-5px);
@@ -1154,25 +1130,14 @@ button {
 }
 
 
-
-
-
 .home-cta {
-
     min-height: 600px;
-
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     color: white;
-
     background:
         url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90")
         center/cover no-repeat;
@@ -1181,11 +1146,8 @@ button {
 
 
 .home-cta-overlay {
-
     position: absolute;
-
     inset: 0;
-
     background:
         rgba(0,0,0,.65);
 
@@ -1193,31 +1155,22 @@ button {
 
 
 .home-cta-content {
-
     position: relative;
-
     z-index: 2;
 
 }
 
 
 .home-cta h2 {
-
     margin: 20px auto 35px;
-
     max-width: 800px;
-
     font-family:
         "Playfair Display",
         serif;
-
     font-size:
         clamp(50px,6vw,80px);
-
     font-weight: 400;
-
     line-height: .95;
-
 }
 
 
@@ -1225,7 +1178,6 @@ button {
 
     color:
         var(--gold-light);
-
 }
 
 
@@ -1249,157 +1201,498 @@ button {
     
 
 .footer {
-
     background: #111;
-
     color: white;
-
     padding-top: 80px;
-
 }
 
 
 .footer-grid {
-
     display: grid;
-
     grid-template-columns:
         2fr 1fr 1fr;
-
     gap: 70px;
-
     padding-bottom: 70px;
-
 }
 
 
 .footer-brand h3 {
-
     font-family:
         "Playfair Display",
         serif;
-
     font-size: 35px;
-
     letter-spacing: 4px;
-
 }
 
 
 .footer-brand p {
-
     margin-top: 5px;
-
     font-size: 8px;
-
     letter-spacing: 3px;
-
     color:
         var(--gold-light);
-
 }
 
 
 .footer-brand span {
-
     display: block;
-
     margin-top: 25px;
-
     max-width: 300px;
-
     color: #777;
-
     font-size: 13px;
-
     line-height: 1.8;
-
 }
 
 
 .footer-links,
 .footer-contact {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
 }
 
 
 .footer h4 {
-
     margin-bottom: 15px;
-
     font-size: 9px;
-
     letter-spacing: 2px;
-
     color:
         var(--gold-light);
-
 }
 
 
 .footer-links a {
-
     color: #aaa;
-
     font-size: 13px;
-
 }
 
 
 .footer-contact p {
-
     color: #777;
-
     font-size: 13px;
-
 }
 
 
 .footer-contact a {
-
     color: white;
-
     font-size: 12px;
-
 }
 
 
 .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-top:
+        1px solid rgba(255,255,255,.1);
+    color: #666;
+    font-size: 10px;
+}
+
+
+/* .floating-contact{
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.contact-btn{
+    min-width: 145px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn{
+    background: #25D366;
+    color: white;
+}
+
+.call-btn{
+    background: #222;
+    color: white;
+}
+
+.estimate-btn{
+    background: #c89b3c;
+    color: white;
+}
+
+.contact-icon{
+    font-size: 18px;
+}
+
+.contact-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
+} */
+
+
+
+/* =========================================
+   FLOATING CONTACT
+========================================= */
+
+.floating-contact {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* WhatsApp + Call common style */
+
+.floating-btn {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    text-decoration: none;
+
+    border-radius: 12px 0 0 12px;
+
+    font-size: 23px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+/* WhatsApp */
+
+.whatsapp-btn {
+    background: #25D366;
+}
+
+.whatsapp-btn:hover {
+    width: 62px;
+    color: #fff;
+    background: #20bd5a;
+}
+
+/* Call */
+
+.call-btn {
+    background: #1d73e8;
+}
+
+.call-btn:hover {
+    width: 62px;
+    color: #fff;
+    background: #155fc0;
+}
+
+/* Free Estimate */
+
+.estimate-btn {
+    min-width: 150px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #111;
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 12px 0 0 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.estimate-btn i {
+    font-size: 17px;
+}
+
+.estimate-btn:hover {
+    min-width: 165px;
+    color: #fff;
+    background: #222;
+}
+
+.estimate-open-btn{
+   background: #6027b5;
+   color: white;
+   text-decoration: none;
+   padding: 10px 15px;
+   border-radius: 15px 0 0 15px;
+   font-size: 20px;
+   font-weight: 600;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   transition: 0.3s;
+}
+
+
+
+/* =========================================
+   ESTIMATE POPUP OVERLAY
+========================================= */
+
+.estimate-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    /* Background blur */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     display: flex;
 
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 
-    padding: 25px 0;
+    padding: 20px;
 
-    border-top:
-        1px solid rgba(255,255,255,.1);
+    z-index: 99999;
 
-    color: #666;
+    opacity: 0;
 
-    font-size: 10px;
+    visibility: hidden;
 
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* OPEN */
+
+.estimate-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.estimate-popup {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 90vh;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(40px) scale(0.94);
+
+    opacity: 0;
+
+    transition:
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.35s ease;
+}
+
+
+/* POPUP ANIMATION */
+
+.estimate-overlay.active .estimate-popup {
+    transform: translateY(0) scale(1);
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   IFRAME
+========================================= */
+
+.estimate-iframe {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.estimate-close {
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #222;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+
+.estimate-close:hover {
+    background: #222;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .estimate-overlay {
+        padding: 12px;
+    }
+
+    .estimate-popup {
+        height: 92vh;
+
+        border-radius: 17px;
+    }
+
+    .estimate-close {
+        width: 38px;
+
+        height: 38px;
+
+        top: 10px;
+
+        right: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .estimate-overlay {
+        padding: 7px;
+    }
+
+    .estimate-popup {
+        height: 94vh;
+
+        border-radius: 14px;
+    }
+
+    .estimate-close {
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 14px;
+    }
 }
 
 
 
 
+/* Mobile */
+@media (max-width: 576px) {
+    .floating-contact {
+        right: 12px;
+        bottom: 15px;
+        gap: 10px;
+    }
 
-/* =========================================================
-   MOBILE & TABLET RESPONSIVE
-   ========================================================= */
+    .whatsapp-btn,
+    .call-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-icon {
+        font-size: 20px;
+    }
+
+    .estimate-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
 
 
-/* =========================================================
-   LARGE TABLET / SMALL LAPTOP
-   1200px
-   ========================================================= */
+
+
+  /* MOBILE & TABLET RESPONSIVE */
+  
 
 @media (max-width: 1200px) {
 
@@ -1449,25 +1742,22 @@ button {
 }
 
 
-/* =========================================================
-   TABLET
-   991px
-   ========================================================= */
+
+
+   
 
 @media (max-width: 991px) {
 
-    /* -------------------------
-       CONTAINER
-       ------------------------- */
+
+      /* CONTAINER */
 
     .container {
         width: calc(100% - 40px);
     }
 
 
-    /* -------------------------
-       HEADER
-       ------------------------- */
+   
+     /*  HEADER  */
 
     .header {
         padding: 14px 0;
@@ -1490,21 +1780,22 @@ button {
 
     /* Show mobile menu */
 
-    .menu-btn {
+      .menu-btn {
         display: flex;
-        border-color: rgba(0, 0, 0, .15);
-        background: #111;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.03);
     }
 
     .menu-btn span {
-        background: white;
+        background: #0b0b0b;
     }
 
 
-    /* -------------------------
-       HERO
-       ------------------------- */
-
+      /* HERO */
+     
     .hero {
         height: 78vh;
         min-height: 620px;
@@ -1535,9 +1826,7 @@ button {
     }
 
 
-    /* -------------------------
-       ABOUT
-       ------------------------- */
+      /* ABOUT */
 
     .about-container {
         width: calc(100% - 80px);
@@ -1560,10 +1849,8 @@ button {
     }
 
 
-    /* -------------------------
-       FEATURE SECTIONS
-       ------------------------- */
-
+      /* FEATURE SECTIONS */
+    
     .feature-section,
     .feature-section.reverse {
         width: calc(100% - 80px);
@@ -1593,9 +1880,7 @@ button {
     }
 
 
-    /* -------------------------
-       PROCESS
-       ------------------------- */
+     /*  PROCESS */
 
     .process-section {
         padding: 90px 0;
@@ -1638,9 +1923,8 @@ button {
     }
 
 
-    /* -------------------------
-       CTA
-       ------------------------- */
+
+      /* CTA */
 
     .home-cta {
         min-height: 500px;
@@ -1652,9 +1936,8 @@ button {
     }
 
 
-    /* -------------------------
-       FOOTER
-       ------------------------- */
+      /* FOOTER */
+  
 
     .footer {
         padding-top: 65px;
@@ -1669,17 +1952,13 @@ button {
 }
 
 
-/* =========================================================
-   MOBILE
-   767px
-   ========================================================= */
+
 
 @media (max-width: 767px) {
 
-    /* -------------------------
-       GLOBAL
-       ------------------------- */
-
+   
+      /* GLOBAL */
+    
     html {
         width: 100%;
         overflow-x: hidden;
@@ -1695,9 +1974,9 @@ button {
     }
 
 
-    /* -------------------------
-       HEADER
-       ------------------------- */
+   
+     /*  HEADER */
+
 
     .header {
         padding: 10px 0;
@@ -1723,9 +2002,8 @@ button {
     }
 
 
-    /* -------------------------
-       MOBILE SIDEBAR
-       ------------------------- */
+     /*  MOBILE SIDEBAR */
+    
 
     .mobile-sidebar {
         width: 310px;
@@ -1762,10 +2040,8 @@ button {
     }
 
 
-    /* -------------------------
-       HERO
-       ------------------------- */
-
+      /* HERO */
+  
     .hero {
         height: 82vh;
         min-height: 600px;
@@ -1821,10 +2097,9 @@ button {
     }
 
 
-    /* -------------------------
-       ABOUT SECTION
-       ------------------------- */
-
+ 
+     /*  ABOUT SECTION */
+    
     .about-container {
         width: calc(100% - 40px);
         padding: 70px 0 80px;
@@ -1880,18 +2155,16 @@ button {
     }
 
 
-    /* -------------------------
-       FEATURE BACKGROUND
-       ------------------------- */
-
+    
+     /*  FEATURE BACKGROUND */
+   
     .about-section-background {
         width: 100%;
     }
 
 
-    /* -------------------------
-       FEATURE SECTIONS
-       ------------------------- */
+    
+      /* FEATURE SECTIONS */
 
     .feature-section,
     .feature-section.reverse {
@@ -1956,9 +2229,7 @@ button {
     }
 
 
-    /* -------------------------
-       PROCESS SECTION
-       ------------------------- */
+      /* PROCESS SECTION */
 
     .process-section {
         padding: 70px 0;
@@ -2040,10 +2311,8 @@ button {
     }
 
 
-    /* -------------------------
-       CTA
-       ------------------------- */
-
+      /* CTA */
+  
     .home-cta {
         min-height: 500px;
         padding: 70px 20px;
@@ -2061,9 +2330,7 @@ button {
     }
 
 
-    /* -------------------------
-       FOOTER
-       ------------------------- */
+      /* FOOTER */
 
     .footer {
         padding-top: 55px;
@@ -2122,17 +2389,11 @@ button {
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-   480px
-   ========================================================= */
-
 @media (max-width: 480px) {
 
-    /* -------------------------
-       HEADER
-       ------------------------- */
-
+   
+     /*  HEADER */
+   
     .container {
         width: calc(100% - 28px);
     }
@@ -2151,9 +2412,8 @@ button {
     }
 
 
-    /* -------------------------
-       SIDEBAR
-       ------------------------- */
+      /* SIDEBAR */
+
 
     .mobile-sidebar {
         width: 290px;
@@ -2166,10 +2426,8 @@ button {
     }
 
 
-    /* -------------------------
-       HERO
-       ------------------------- */
-
+      /* HERO */
+   
     .hero {
         height: 78vh;
         min-height: 550px;
@@ -2202,9 +2460,7 @@ button {
     }
 
 
-    /* -------------------------
-       ABOUT
-       ------------------------- */
+      /* ABOUT */
 
     .about-container {
         width: calc(100% - 32px);
@@ -2230,9 +2486,7 @@ button {
     }
 
 
-    /* -------------------------
-       FEATURES
-       ------------------------- */
+      /* FEATURES */
 
     .feature-section,
     .feature-section.reverse {
@@ -2254,9 +2508,7 @@ button {
     }
 
 
-    /* -------------------------
-       PROCESS
-       ------------------------- */
+      /* PROCESS */
 
     .process-section {
         padding: 60px 0;
@@ -2288,9 +2540,7 @@ button {
     }
 
 
-    /* -------------------------
-       CTA
-       ------------------------- */
+     /*  CTA */
 
     .home-cta {
         min-height: 430px;
@@ -2303,9 +2553,7 @@ button {
     }
 
 
-    /* -------------------------
-       FOOTER
-       ------------------------- */
+      /* FOOTER */
 
     .footer {
         padding-top: 45px;
@@ -2326,10 +2574,6 @@ button {
 }
 
 
-/* =========================================================
-   VERY SMALL DEVICES
-   360px
-   ========================================================= */
 
 @media (max-width: 360px) {
 

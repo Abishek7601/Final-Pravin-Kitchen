@@ -1498,6 +1498,325 @@ button {
 
 }
 
+/* =========================================
+   FLOATING CONTACT
+========================================= */
+
+.floating-contact {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+/* WhatsApp + Call common style */
+
+.floating-btn {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    text-decoration: none;
+
+    border-radius: 12px 0 0 12px;
+
+    font-size: 23px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+/* WhatsApp */
+
+.whatsapp-btn {
+    background: #25D366;
+}
+
+.whatsapp-btn:hover {
+    width: 62px;
+    color: #fff;
+    background: #20bd5a;
+}
+
+/* Call */
+
+.call-btn {
+    background: #1d73e8;
+}
+
+.call-btn:hover {
+    width: 62px;
+    color: #fff;
+    background: #155fc0;
+}
+
+/* Free Estimate */
+
+.estimate-btn {
+    min-width: 150px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #111;
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 12px 0 0 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.estimate-btn i {
+    font-size: 17px;
+}
+
+.estimate-btn:hover {
+    min-width: 165px;
+    color: #fff;
+    background: #222;
+}
+
+
+
+
+/* =========================================
+   ESTIMATE POPUP OVERLAY
+========================================= */
+
+.estimate-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    /* Background blur */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* OPEN */
+
+.estimate-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.estimate-popup {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 90vh;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(40px) scale(0.94);
+
+    opacity: 0;
+
+    transition:
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.35s ease;
+}
+
+
+/* POPUP ANIMATION */
+
+.estimate-overlay.active .estimate-popup {
+    transform: translateY(0) scale(1);
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   IFRAME
+========================================= */
+
+.estimate-iframe {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.estimate-close {
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #222;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+
+.estimate-close:hover {
+    background: #222;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+.estimate-open-btn{
+   background: #6027b5;
+   color: white;
+   text-decoration: none;
+   padding: 10px 15px;
+   border-radius: 15px 0 0 15px;
+   font-size: 20px;
+   font-weight: 600;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   transition: 0.3s;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .estimate-overlay {
+        padding: 12px;
+    }
+
+    .estimate-popup {
+        height: 92vh;
+
+        border-radius: 17px;
+    }
+
+    .estimate-close {
+        width: 38px;
+
+        height: 38px;
+
+        top: 10px;
+
+        right: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .estimate-overlay {
+        padding: 7px;
+    }
+
+    .estimate-popup {
+        height: 94vh;
+
+        border-radius: 14px;
+    }
+
+    .estimate-close {
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 14px;
+    }
+}
 
 
 
@@ -1860,6 +2179,7 @@ button {
         width: calc(100% - 32px);
         max-width: none;
     }
+   
 
 
     /* =====================================================
@@ -1867,26 +2187,33 @@ button {
        ===================================================== */
 
     .header {
+        padding: 10px 0;
+    }
+
+    .header.scrolled {
         padding: 8px 0;
     }
 
     .navbar {
-        height: 55px;
+        height: 54px;
     }
 
     .brand-logo img {
-        width: 185px;
-        max-width: 100%;
+        width: 190px;
+        max-width: 70vw;
     }
 
     .menu-btn {
+        display: flex;
         width: 44px;
         height: 44px;
         flex-shrink: 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.03);
     }
 
     .menu-btn span {
-        width: 20px;
+        background: #0b0b0b;
     }
 
 
@@ -1895,13 +2222,13 @@ button {
        ===================================================== */
 
     .mobile-sidebar {
-        width: 320px;
+        width: 300px;
         max-width: 88vw;
     }
 
     .sidebar-header {
-        min-height: 80px;
-        padding: 15px 18px;
+        min-height: 78px;
+        padding: 15px 16px;
     }
 
     .sidebar-logo img {
@@ -1910,9 +2237,9 @@ button {
     }
 
     .sidebar-close {
-        width: 40px;
-        height: 40px;
-        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
     }
 
     .sidebar-nav {
@@ -1927,11 +2254,11 @@ button {
     }
 
     .sidebar-link:hover {
-        padding-left: 17px;
+        padding-left: 18px;
     }
 
     .sidebar-footer {
-        padding: 22px 18px;
+        padding: 20px 18px;
     }
 
 
