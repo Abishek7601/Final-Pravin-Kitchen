@@ -756,6 +756,9 @@ button {
     color: #111111;
 
     margin-bottom: 25px;
+            font-family:
+        "Playfair Display",
+        serif;
 }
 
 .offers-header p {
@@ -832,6 +835,9 @@ button {
     color: #111111;
 
     margin-bottom: 7px;
+            font-family:
+        "Playfair Display",
+        serif;
 }
 
 .category-header p {
